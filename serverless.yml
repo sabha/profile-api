@@ -44,3 +44,9 @@ functions:
       - http:
           path: arts
           method: post
+  get:
+    handler: get.main
+    events:
+      - http:
+          path: arts/{id}
+          method: get

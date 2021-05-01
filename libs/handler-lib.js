@@ -1,4 +1,4 @@
-export default function handle(lambda) {
+export default function handler(lambda) {
   return async function (event, context) {
     let body, statusCode;
     try {
