@@ -1,6 +1,11 @@
 {
   "body": "{\"content\":\"updated via loacal code\",\"attachment\":\"hello.png\"}",
   "pathParameters": {
-    "id": "91a92500-aac6-11eb-b623-1f59053b98fd"
+    "id": "d0b12220-aaee-11eb-9e77-39f287a6e76d"
+  },
+  "requestContext": {
+    "identity": {
+      "cognitoIdentityId": "USER-SUB-1234"
+    }
   }
 }

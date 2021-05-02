@@ -44,27 +44,32 @@ functions:
       - http:
           path: arts
           method: post
+          authorizer: aws_iam
   get:
     handler: get.main
     events:
       - http:
           path: arts/{id}
           method: get
+          authorizer: aws_iam
   list:
     handler: list.main
     events:
       - http:
           path: arts
           method: get
+          authorizer: aws_iam
   update:
     handler: update.main
     events:
       - http:
           path: arts/{id}
           method: put
+          authorizer: aws_iam
   delete:
     handler: delete.main
     events:
       - http:
           path: arts/{id}
           method: delete
+          authorizer: aws_iam

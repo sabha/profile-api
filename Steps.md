@@ -9,3 +9,10 @@ serverless invoke local --function list --path mocks/list-event.json
 serverless invoke local --function update --path mocks/update-event.json
 serverless invoke local --function delete --path mocks/delete-event.json
 ```
+
+### Cognito user pool and app client Setup
+
+```
+aws cognito-idp sign-up --region us-east-1 --client-id 2evou4sgn9a3ga9ekvdhbonndh --username admin@example.com --password Pass4321!
+aws cognito-idp  admin-confirm-sign-up --region us-east-1 --user-pool-id us-east-1_JfM8LcEYy --username admin@example.com
+```
