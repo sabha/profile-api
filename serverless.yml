@@ -24,6 +24,7 @@ provider:
   #  SAMPLE_ENV_VAR: ${env:SAMPLE_ENV_VAR}
   environment:
     tableName: arts
+    stripeSecretKey: ${env:STRIPE_SECRET_KEY}
 
   iamRoleStatements:
     - Effect: Allow
@@ -72,4 +73,11 @@ functions:
       - http:
           path: arts/{id}
           method: delete
+          authorizer: aws_iam
+  billing:
+    handler: billing.main
+    events:
+      - http:
+          path: billing
+          method: post
           authorizer: aws_iam
