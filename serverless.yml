@@ -62,3 +62,9 @@ functions:
       - http:
           path: arts/{id}
           method: put
+  delete:
+    handler: delete.main
+    events:
+      - http:
+          path: arts/{id}
+          method: delete
