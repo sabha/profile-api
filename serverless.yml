@@ -56,3 +56,9 @@ functions:
       - http:
           path: arts
           method: get
+  update:
+    handler: update.main
+    events:
+      - http:
+          path: arts/{id}
+          method: put
