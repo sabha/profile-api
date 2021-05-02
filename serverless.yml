@@ -50,3 +50,9 @@ functions:
       - http:
           path: arts/{id}
           method: get
+  list:
+    handler: list.main
+    events:
+      - http:
+          path: arts
+          method: get
