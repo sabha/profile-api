@@ -9,7 +9,9 @@ plugins:
   - serverless-bundle # Package our functions with Webpack
   - serverless-offline
   - serverless-dotenv-plugin # Load .env as environment variables
-
+resources:
+  # API Gateway Errors
+  - ${file(resources/api-gateway-errors.yml)}
 provider:
   name: aws
   runtime: nodejs10.x
@@ -45,6 +47,7 @@ functions:
       - http:
           path: arts
           method: post
+          cors: true
           authorizer: aws_iam
   get:
     handler: get.main
@@ -52,6 +55,7 @@ functions:
       - http:
           path: arts/{id}
           method: get
+          cors: true
           authorizer: aws_iam
   list:
     handler: list.main
@@ -59,6 +63,7 @@ functions:
       - http:
           path: arts
           method: get
+          cors: true
           authorizer: aws_iam
   update:
     handler: update.main
@@ -66,6 +71,7 @@ functions:
       - http:
           path: arts/{id}
           method: put
+          cors: true
           authorizer: aws_iam
   delete:
     handler: delete.main
@@ -73,6 +79,7 @@ functions:
       - http:
           path: arts/{id}
           method: delete
+          cors: true
           authorizer: aws_iam
   billing:
     handler: billing.main
@@ -80,4 +87,5 @@ functions:
       - http:
           path: billing
           method: post
+          cors: true
           authorizer: aws_iam
